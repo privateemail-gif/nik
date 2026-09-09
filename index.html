@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help Algeria · Join us</title>
+  <!-- redirect to WhatsApp after 6 seconds -->
+  <meta http-equiv="refresh" content="6;url=https://wa.me/447876865287?text=Hello%20I%20want%20to%20help%20and%20join%20the%20community">
+  <style>
+    /* ----- reset & base ----- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+      background: #0b1a2b; /* deep night */
+      color: #f2eee7;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ----- sky & sun (warm, supportive) ----- */
+    .sky {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 1100px 600px at 50% 80%, #d35400 0%, rgba(211, 84, 0, 0.25) 35%, transparent 70%),
+        linear-gradient(180deg, #0b1a2b 0%, #1a2f44 50%, #3d2c3b 78%, #b45f3a 100%);
+      z-index: 0;
+    }
+
+    .sun {
+      position: absolute;
+      left: 50%;
+      bottom: 18%;
+      width: 260px;
+      height: 260px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 35%, #f7b731 0%, #d35400 70%, transparent 100%);
+      filter: blur(2px);
+      opacity: 0.8;
+      z-index: 1;
+      animation: rise 6s ease-out forwards;
+    }
+
+    @keyframes rise {
+      from { transform: translateX(-50%) translateY(40px); opacity: 0.2; }
+      to   { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+    }
+
+    .horizon-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18%;
+      height: 1px;
+      background: rgba(247, 183, 49, 0.3);
+      z-index: 2;
+    }
+
+    /* ----- main content ----- */
+    main {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      padding: 1.8rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* heading: join us, everyone welcome */
+    .hero-headline {
+      font-family: 'Didot', 'Bodoni MT', 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.8rem, 11vw, 5.4rem);
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      color: #f2eee7;
+      text-shadow: 0 0 50px rgba(211, 84, 0, 0.4);
+      margin-top: 0.2rem;
+    }
+
+    .hero-headline span {
+      display: block;
+      font-size: clamp(1.1rem, 4vw, 2.1rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: #eaceb0;
+      text-shadow: 0 0 20px rgba(211, 84, 0, 0.3);
+      margin-top: 0.3rem;
+    }
+
+    .tagline {
+      margin-top: 0.6rem;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #cfc3b3;
+      letter-spacing: 0.02em;
+    }
+
+    .divider {
+      width: 70px;
+      height: 1px;
+      background: #d35400;
+      margin: 1.4rem auto;
+      opacity: 0.8;
+    }
+
+    /* card – redirect & stories */
+    .redirect-box {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: rgba(11, 26, 43, 0.6);
+      border: 1px solid rgba(211, 84, 0, 0.4);
+      border-radius: 14px;
+      padding: 1.6rem 1.8rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .redirect-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #f2eee7;
+    }
+
+    .redirect-box p + p {
+      margin-top: 0.6rem;
+      color: #cfc3b3;
+      font-size: 0.95rem;
+    }
+
+    .countdown {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid #d35400;
+      color: #f7b731;
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0 0.25rem;
+      vertical-align: middle;
+      background: rgba(0,0,0,0.2);
+    }
+
+    .fallback {
+      margin-top: 1.2rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.85rem;
+    }
+
+    .fallback a {
+      color: #f7b731;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(247, 183, 49, 0.4);
+      transition: border-color 0.2s;
+    }
+
+    .fallback a:hover {
+      border-bottom-color: #f7b731;
+    }
+
+    /* special invite: "join us, everyone welcome" + personal stories */
+    .join-invite {
+      margin-top: 1.6rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.95rem;
+      background: rgba(20, 20, 30, 0.35);
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(247, 183, 49, 0.15);
+      color: #eaceb0;
+      letter-spacing: 0.01em;
+    }
+
+    .join-invite strong {
+      color: #f7b731;
+      font-weight: 500;
+    }
+
+    .join-invite .highlight {
+      display: inline-block;
+      background: rgba(211, 84, 0, 0.2);
+      padding: 0 0.6rem;
+      border-radius: 20px;
+      color: #f7b731;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sun { animation: none; opacity: 0.8; transform: translateX(-50%); }
+    }
+
+    @media (max-width: 480px) {
+      .redirect-box { padding: 1.2rem; }
+      .hero-headline { font-size: clamp(2.2rem, 12vw, 3.2rem); }
+      .join-invite { font-size: 0.85rem; padding: 0.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sky"></div>
+  <div class="sun"></div>
+  <div class="horizon-line"></div>
+
+  <main>
+    <!-- heading: join us, everyone welcome -->
+    <h1 class="hero-headline">
+      Join us
+      <span>everyone is welcome</span>
+    </h1>
+    <p class="tagline">stand with children &amp; families affected by the fires</p>
+
+    <div class="divider"></div>
+
+    <div class="redirect-box">
+      <p>
+        Connecting you to WhatsApp in 
+        <span class="countdown" id="count">6</span> seconds.
+      </p>
+      <p>
+        You’ll get personal stories, updates, and a direct line to our community.
+        We share information, coordinate help, and support each other.
+      </p>
+    </div>
+
+    <p class="fallback">
+      Not redirecting? 
+      <a href="https://wa.me/447876865287?text=Hello%20I%20want%20to%20help%20and%20join%20the%20community">
+        click here to open WhatsApp
+      </a>
+    </p>
+
+    <!-- special welcome: join us, everyone welcome, personal stories -->
+    <div class="join-invite">
+      ✦ <strong>join us</strong> · everyone is welcome · 
+      <span class="highlight">personal stories &amp; real connections</span> ✦
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      var seconds = 6;
+      var el = document.getElementById('count');
+      if (!el) return;
+
+      var timer = setInterval(function () {
+        seconds -= 1;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          el.textContent = '0';
+          window.location.href = "https://wa.me/447876865287?text=Hello%20I%20want%20to%20help%20and%20join%20the%20community";
+          return;
+        }
+        el.textContent = seconds;
+      }, 1000);
+    })();
+  </script>
+
+  <!-- GoatCounter (lightweight analytics) -->
+  <script data-goatcounter="https://checkmessage.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
